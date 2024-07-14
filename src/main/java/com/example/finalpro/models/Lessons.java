@@ -18,6 +18,7 @@ public class Lessons {
     private int id;
 
     @ManyToOne
+
     private Teachers teacher;
     @ManyToOne
     private Students student;

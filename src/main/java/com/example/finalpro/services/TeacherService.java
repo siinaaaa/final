@@ -18,4 +18,9 @@ public class TeacherService {
     public Teachers findByname(String name){
         return this.teacherRepository.findByName(name);
     }
+    public String delete(int id){
+         this.teacherRepository.deleteById(id);
+         return "";
+
+    }
 }
