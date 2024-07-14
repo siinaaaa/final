@@ -55,8 +55,7 @@ public class CollegeController {
 
     }
     @GetMapping(value = "updateCollege")
-     public CollegeDto update(CollegeDto collegeDto){
-        System.out.println(collegeDto.getId());
+     public CollegeDto update(@RequestBody CollegeDto collegeDto){
         this.collegeService.delete(collegeDto.getId());
         Colleges college2 = collegeDto.convertDtotoEntity(collegeDto);
         this.collegeService.save(college2);
