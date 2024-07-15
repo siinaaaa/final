@@ -1,5 +1,6 @@
 package com.example.finalpro.models;
 
+import com.example.finalpro.dtos.LessonDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
@@ -29,6 +30,15 @@ public class Lessons {
     @Column(unique = true)
     private String name;
     private int unit;
-    @OneToMany(mappedBy = "lesson")
-    private List<Students>students;
+
+    public LessonDto convertEntitytoDto(Lessons lesson){
+        LessonDto lessonDto = new LessonDto();
+        lessonDto.setName(lesson.getName());
+        lessonDto.setStudent(lesson.getStudent());
+        lessonDto.setCollege(lesson.getCollege());
+        lessonDto.setUnit(lesson.getUnit());
+        lessonDto.setTeacher(lesson.getTeacher());
+        return lessonDto;
+    }
+
 }

@@ -4,4 +4,5 @@ import com.example.finalpro.models.Lessons;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LessonRepository extends JpaRepository<Lessons, Integer> {
+    Lessons findByName(String name);
 }

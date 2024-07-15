@@ -16,4 +16,11 @@ public class StudentService {
         return this.studentRepository.save(students);
 
     }
+    public Students findByname(String name){
+         return this.studentRepository.findByName(name);
+    }
+    public String delete(int id){
+        this.studentRepository.deleteById(id);
+        return "";
+    }
 }

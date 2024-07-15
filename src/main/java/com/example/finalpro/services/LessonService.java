@@ -13,4 +13,11 @@ public class LessonService {
     public Lessons save(Lessons lessons){
         return this.lessonRepository.save(lessons);
     }
+    public Lessons findByname(String name){
+        return this.lessonRepository.findByName(name);
+    }
+    public String delete(int id){
+        this.lessonRepository.deleteById(id);
+        return "";
+    }
 }
