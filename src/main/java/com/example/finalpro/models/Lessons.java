@@ -19,9 +19,11 @@ public class Lessons {
     private int id;
 
     @ManyToOne
+    @JsonIgnore
 
     private Teachers teacher;
     @ManyToOne
+    @JsonIgnore
     private Students student;
     @ManyToOne
     @JsonIgnore
