@@ -66,7 +66,7 @@ public class TeacherController {
     }
 
     @GetMapping(value = "updateTeacher")
-    public TeacherDto update(@RequestParam TeacherDto teacherDto) {
+    public TeacherDto update(@RequestBody TeacherDto teacherDto) {
         Teachers teacher = this.teacherService.findByname(teacherDto.getName());
         this.teacherService.delete(teacher.getId());
         this.teacherService.save(teacherDto.convertDtotoEntity(teacherDto));
